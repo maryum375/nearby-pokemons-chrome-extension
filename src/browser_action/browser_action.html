@@ -18,16 +18,16 @@
 </head>
 
 <body>
-	<input type="text" id="address" />
+	<input type="text" id="address" /><button id="go-to-location-btn">Go!</button>
+	<div id="Map" style="height:250px;width:400px"></div>
 	<div id="nearby-wrapper">
 		No pokemons nearby!
 	</div>
 
-	<button id="reload-btn">Click</button>
-
 	<script src="/js/script.js"></script>
 	<script src="/js/utils/pokemonTracker.js"></script>
 	<script src="/js/utils/geo.js"></script>
+    <script src="/js/utils/OpenLayers.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 </body>
 
