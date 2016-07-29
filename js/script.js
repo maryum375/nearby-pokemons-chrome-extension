@@ -7,9 +7,11 @@ var mapZoom = 18;
 
 var fromProjection;
 var toProjection;
+var markersLayer;
 
 var mapMarkerSize;
 var mapMarkerOffset;
+var currentMarkers = [];
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('location-form').addEventListener('submit', setLocation);
@@ -33,6 +35,8 @@ function initializeMapVariables() {
     map = new OpenLayers.Map("Map");
     var mapnik = new OpenLayers.Layer.OSM();
     map.addLayer(mapnik);
+    markersLayer = new OpenLayers.Layer.Markers("Markers");
+    map.addLayer(markersLayer);
     map.setCenter(position, mapZoom);
 }
 
@@ -72,15 +76,23 @@ function putSinglePokemonOnMap(pokemonJsonData) {
     var icon = new OpenLayers.Icon(pokemonImage, mapMarkerSize, mapMarkerOffset);
     var position = new OpenLayers.LonLat(pokemonJsonData.longitude, pokemonJsonData.latitude).transform(fromProjection, toProjection);
 
-    var markers = new OpenLayers.Layer.Markers("Markers");
-    map.addLayer(markers);
-    markers.addMarker(new OpenLayers.Marker(position, icon));
+    var marker = new OpenLayers.Marker(position, icon);
+    currentMarkers.push(marker);
+    markersLayer.addMarker(marker);
 }
 
 
 function updatePokemonsToView(nearbyPokemonsArray) {
+    removeAllCurrentMarkers();
+    currentMarkers = [];
     for (var i = 0; i < nearbyPokemonsArray.length; i++) {
         putSinglePokemonOnMap(nearbyPokemonsArray[i])
+    }
+}
+
+function removeAllCurrentMarkers() {
+    for (var i = 0; i < currentMarkers.length; i++) {
+        markersLayer.removeMarker(currentMarkers[i]);
     }
 }
 
