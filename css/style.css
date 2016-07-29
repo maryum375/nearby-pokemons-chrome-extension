@@ -1,4 +1,8 @@
 
+body{
+    background: rgb(255, 211, 42)
+}
+
 #address {
     margin: 10px 0;
     width: 93%;
@@ -12,4 +16,11 @@
 div.olControlZoom{
     bottom: 8px !important;
     top:initial !important;
+}
+
+#picachu-img{
+    width:70px;
+    height:70px;
+    display: block;
+    margin:0 auto;
 }
