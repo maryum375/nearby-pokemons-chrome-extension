@@ -2,14 +2,13 @@
 
 <head>
 	<style type="text/css">
-		body{
-            /*width: 450px;*/
+		body {
+			/*width: 450px;*/
 		}
-		#mainPopup {
-			padding: 10px;
-			height: 200px;
-			width: 400px;
-			font-family: Helvetica, Ubuntu, Arial, sans-serif;
+		
+		#address {
+			margin: 10px 0;
+			width: 200px;
 		}
 		
 		h1 {
@@ -19,7 +18,7 @@
 </head>
 
 <body>
-	coordinates: <input type="text" id="coords"/>
+	<input type="text" id="address" />
 	<div id="nearby-wrapper">
 		No pokemons nearby!
 	</div>
@@ -27,6 +26,9 @@
 	<button id="reload-btn">Click</button>
 
 	<script src="/js/script.js"></script>
+	<script src="/js/utils/pokemonTracker.js"></script>
+	<script src="/js/utils/geo.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 </body>
 
 </html>

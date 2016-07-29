@@ -1,33 +1,22 @@
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('reload-btn').addEventListener('click', getNearbyPokemons);
-})
+var addressInputElement;
 var currentPositionLat;
 var currentPositionLon;
 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('reload-btn').addEventListener('click', getNearbyPokemons);
+    addressInputElement = document.getElementById('address');
+    var autocomplete = new google.maps.places.Autocomplete(addressInputElement);
+})
+
 function getNearbyPokemons() {
-    var xhr = new XMLHttpRequest();
 
-    currentPositionLat = document.getElementById("coords").value.split(',')[0];
-    currentPositionLon = document.getElementById("coords").value.split(',')[1];
-    xhr.open("GET", "https://pokevision.com/map/data/" + currentPositionLat + "/" + currentPositionLon, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-            // JSON.parse does not evaluate the attacker's scripts.
-            var resp = JSON.parse(xhr.responseText);
-            console.log(resp);
-            if (resp.status === "success" && resp.pokemon) {
-                var pokemons = resp.pokemon.sort(function (a, b) {
-                    var itemADistance = getDistanceFromLatLonInM(currentPositionLat, currentPositionLon, a.latitude, a.longitude);
-                    var itemBDistance = getDistanceFromLatLonInM(currentPositionLat, currentPositionLon, b.latitude, b.longitude);
-                    return itemADistance - itemBDistance;
-                })
-                updatePokemonsToView(resp.pokemon);
-            }
-        }
-    }
-    xhr.send();
-
+    var curreentAddress = addressInputElement.value;
+    GeoCoding.getCoordinatesByAddress(curreentAddress, function (coordinates) {
+        currentPositionLat = coordinates.lat;
+        currentPositionLon = coordinates.lng;
+        var nearbyPokemons = PokemonLocator.getNearbyPokemons(currentPositionLat, currentPositionLon, updatePokemonsToView);
+    })
 }
 
 function updatePokemonsToView(nearbyPokemonsArray) {
@@ -44,7 +33,8 @@ function getSinglePokemonView(pokemonJsonData) {
     var pokemonImage = createPokemonImageElement(pokemonJsonData.pokemonId);
 
     var distanceElement = document.createElement("span")
-    distanceElement.innerText = "distance: " + Math.round(getDistanceFromLatLonInM(currentPositionLat, currentPositionLon, pokemonJsonData.latitude, pokemonJsonData.longitude)) + "m"
+    var distance = Math.round(GeoCoding.getDistanceFromLatLonInM(currentPositionLat, currentPositionLon, pokemonJsonData.latitude, pokemonJsonData.longitude));
+    distanceElement.innerText = "distance: " + distance + "m"
 
     wrapper.appendChild(pokemonImage);
     wrapper.appendChild(distanceElement);
@@ -64,21 +54,3 @@ function createPokemonImageElement(pokemonId) {
 //         console.log("Geolocation is not supported by this browser.");
 //     }
 // }
-
-function getDistanceFromLatLonInM(lat1, lon1, lat2, lon2) {
-    var R = 6371; // Radius of the earth in km
-    var dLat = deg2rad(lat2 - lat1);  // deg2rad below
-    var dLon = deg2rad(lon2 - lon1);
-    var a =
-        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-        Math.sin(dLon / 2) * Math.sin(dLon / 2)
-        ;
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c; // Distance in km
-    return d * 1000;
-}
-
-function deg2rad(deg) {
-    return deg * (Math.PI / 180)
-}

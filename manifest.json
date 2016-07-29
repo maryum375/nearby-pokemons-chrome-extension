@@ -22,6 +22,9 @@
   },
   "permissions": [
     "geolocation",
-    "https://*.pokevision.com/*"
-  ]
+    "https://*.pokevision.com/*",
+    "https://*.google.com/*",
+    "https://maps.googleapis.com/*"
+  ],
+  "content_security_policy": "script-src 'self' https://maps.googleapis.com; object-src 'self'"
 }
