@@ -12,8 +12,7 @@ var mapMarkerSize;
 var mapMarkerOffset;
 
 document.addEventListener('DOMContentLoaded', function () {
-    // document.getElementById('reload-btn').addEventListener('click', getNearbyPokemons);
-    document.getElementById('go-to-location-btn').addEventListener('click', setLocation);
+    document.getElementById('location-form').addEventListener('submit', setLocation);
     addressInputElement = document.getElementById('address');
     var autocomplete = new google.maps.places.Autocomplete(addressInputElement);
     initializeMapVariables();
@@ -37,7 +36,11 @@ function initializeMapVariables() {
     map.setCenter(position, mapZoom);
 }
 
-function setLocation() {
+function setLocation(e) {
+    if (e) {
+        e.preventDefault();
+    }
+
     var curreentAddress = addressInputElement.value;
     if (curreentAddress) {
         GeoCoding.getCoordinatesByAddress(curreentAddress, function (coordinates) {

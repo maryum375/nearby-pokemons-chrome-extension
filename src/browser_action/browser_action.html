@@ -5,13 +5,16 @@
 </head>
 
 <body>
-	<input type="text" id="address" /><button id="go-to-location-btn">Go!</button>
+	<form id="location-form">
+		<input type="text" id="address" />
+		<input type="submit" value="Go!" />
+	</form>
 	<div id="Map"></div>
 
 	<script src="/js/script.js"></script>
 	<script src="/js/utils/pokemonTracker.js"></script>
 	<script src="/js/utils/geo.js"></script>
-    <script src="/js/utils/OpenLayers.js"></script>
+	<script src="/js/utils/map/OpenLayers.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 </body>
 
