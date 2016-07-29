@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     addressInputElement = document.getElementById('address');
     var autocomplete = new google.maps.places.Autocomplete(addressInputElement);
     initializeMapVariables();
+    setLocation();
 })
 
 function initializeMapVariables() {
