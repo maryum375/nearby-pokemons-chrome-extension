@@ -17,15 +17,20 @@ var currentMarkers = [];
 document.addEventListener('DOMContentLoaded', function () {
     settings = new Store("settings");
     document.getElementById('location-form').addEventListener('submit', setLocation);
+    document.getElementById('no-default-address').addEventListener('click', redirectToOptionsPage);
     initializeAddressInput();
     var autocomplete = new google.maps.places.Autocomplete(addressInputElement);
     initializeMapVariables();
     setLocation();
 })
 
+function redirectToOptionsPage(e) {
+    e.preventDefault();
+    var optionsPageUrl = chrome.extension.getURL("src/options_custom/index.html");
+    chrome.tabs.create({ url: optionsPageUrl });
+}
+
 function initializeAddressInput() {
-    debugger;
-    console.log(settings.get("address"))
     addressInputElement = document.getElementById('address');
 
     if (settings.get("address")) {

@@ -24,3 +24,7 @@ div.olControlZoom{
     display: block;
     margin:0 auto;
 }
+
+#no-default-address{
+    font-size: 16px;
+}
