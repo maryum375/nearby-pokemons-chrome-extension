@@ -15,54 +15,33 @@ this.i18n = {
     
     
     
-    "information": {
-        "en": "Information",
-        "de": "Information"
+    "general": {
+        "en": "General",
+        "de": "General"
     },
-    "login": {
-        "en": "Login",
-        "de": "Anmeldung"
+    "default-location": {
+        "en": "Default Location",
+        "de": "Standardposition"
     },
-    "username": {
-        "en": "Username:",
-        "de": "Benutzername:"
+    "address": {
+        "en": "Address or coordinates:",
+        "de": "Adresse oder Koordinaten:"
     },
-    "password": {
-        "en": "Password:",
-        "de": "Passwort:"
+    "address-placeholder": {
+        "en": "Search...",
+        "de": "Suchen..."
     },
-    "x-characters": {
-        "en": "6 - 12 characters",
-        "de": "6 - 12 Zeichen"
-    },
-    "x-characters-pw": {
-        "en": "10 - 18 characters",
-        "de": "10 - 18 Zeichen"
-    },
-    "description": {
-        "en": "This is a description. You can write any text inside of this.<br>\
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\
-        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores\
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem\
-        ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et\
-        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        
-        "de": "Das ist eine Beschreibung. Du kannst hier beliebigen Text einfügen.<br>\
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\
-        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores\
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem\
-        ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et\
-        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+    "auto-detect-note": {
+        "en": "<b>Note: </b>In case no default address was given the extension will rely on HTML5 based location API.",
+        "de": "<b>notieren: </b>Falls keine Standardposition angegeben wird, werden die Erweiterungen sich auf den Standort-API der HTML5 stützen"
     },
     "logout": {
         "en": "Logout",
         "de": "Abmeldung"
     },
-    "enable": {
-        "en": "Enable",
-        "de": "Aktivieren"
+    "auto-detect-location": {
+        "en": "Auto Detect",
+        "de": "Automatische Erkennung"
     },
     "disconnect": {
         "en": "Disconnect:",

@@ -3,6 +3,7 @@ var addressInputElement;
 var map;
 var currentPositionLat;
 var currentPositionLon;
+var settings;
 var mapZoom = 18;
 
 var fromProjection;
@@ -14,12 +15,23 @@ var mapMarkerOffset;
 var currentMarkers = [];
 
 document.addEventListener('DOMContentLoaded', function () {
+    settings = new Store("settings");
     document.getElementById('location-form').addEventListener('submit', setLocation);
-    addressInputElement = document.getElementById('address');
+    initializeAddressInput();
     var autocomplete = new google.maps.places.Autocomplete(addressInputElement);
     initializeMapVariables();
     setLocation();
 })
+
+function initializeAddressInput() {
+    debugger;
+    console.log(settings.get("address"))
+    addressInputElement = document.getElementById('address');
+
+    if (settings.get("address")) {
+        addressInputElement.value = settings.get("address");
+    }
+}
 
 function initializeMapVariables() {
     currentPositionLat = 0.0;
