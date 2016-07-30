@@ -6,33 +6,24 @@ this.manifest = {
         {
             "tab": i18n.get("general"),
             "group": i18n.get("default-location"),
-            "name": "username",
+            "name": "address",
             "type": "text",
-            "label": i18n.get("username"),
-            "text": i18n.get("x-characters")
+            "label": i18n.get("address"),
+            "text": i18n.get("address-placeholder")
         },
         {
             "tab": i18n.get("general"),
             "group": i18n.get("default-location"),
-            "name": "password",
-            "type": "text",
-            "label": i18n.get("password"),
-            "text": i18n.get("x-characters-pw"),
-            "masked": true
-        },
-        {
-            "tab": i18n.get("general"),
-            "group": i18n.get("default-location"),
-            "name": "myDescription",
-            "type": "description",
-            "text": i18n.get("description")
-        },
-        {
-            "tab": i18n.get("general"),
-            "group": i18n.get("logout"),
-            "name": "myCheckbox",
+            "name": "auto-detect",
             "type": "checkbox",
-            "label": i18n.get("enable")
+            "label": i18n.get("auto-detect-location")
+        },
+        {
+            "tab": i18n.get("general"),
+            "group": i18n.get("default-location"),
+            "name": "auto-detect-note",
+            "type": "description",
+            "text": i18n.get("auto-detect-note")
         },
         {
             "tab": i18n.get("general"),
@@ -120,15 +111,5 @@ this.manifest = {
                 ["cold"]
             ]
         }
-    ],
-    "alignment": [
-        [
-            "username",
-            "password"
-        ],
-        [
-            "noti_volume",
-            "sound_volume"
-        ]
     ]
 };
