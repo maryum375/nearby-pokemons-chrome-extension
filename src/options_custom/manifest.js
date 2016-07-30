@@ -16,6 +16,12 @@ this.manifest = {
             "name": "auto-detect-note",
             "type": "description",
             "text": i18n.get("auto-detect-note")
+        },
+        {
+            "tab": i18n.get("general"),
+            "name": "no-save-needed",
+            "type": "description",
+            "text": "<h3>" + i18n.get("no-save-needed") + "</h3>"
         }
         // {
         //     "tab": i18n.get("general"),

@@ -35,16 +35,8 @@ this.i18n = {
         "en": "<b>Note: </b>In case no default address was given the extension will rely on HTML5 based location API.",
         "de": "<b>notieren: </b>Falls keine Standardposition angegeben wird, werden die Erweiterungen sich auf den Standort-API der HTML5 stützen"
     },
-    "logout": {
-        "en": "Logout",
-        "de": "Abmeldung"
-    },
-    "auto-detect-location": {
-        "en": "Auto Detect",
-        "de": "Automatische Erkennung"
-    },
-    "disconnect": {
-        "en": "Disconnect:",
-        "de": "Trennen:"
+    "no-save-needed": {
+        "en": "All your settings are already saved!",
+        "de": "Alle Einstellungen sind bereits gespeichert!"
     }
 };
