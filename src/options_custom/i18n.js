@@ -32,8 +32,8 @@ this.i18n = {
         "de": "Suchen..."
     },
     "auto-detect-note": {
-        "en": "This will rely on HTML5 based location API.",
-        "de": "Dies wird auf HTML5 basierten Standort-API verlassen."
+        "en": "<b>Note: </b>In case no default address was given the extension will rely on HTML5 based location API.",
+        "de": "<b>notieren: </b>Falls keine Standardposition angegeben wird, werden die Erweiterungen sich auf den Standort-API der HTML5 stützen"
     },
     "logout": {
         "en": "Logout",
