@@ -15,13 +15,13 @@ this.i18n = {
     
     
     
-    "information": {
-        "en": "Information",
-        "de": "Information"
+    "general": {
+        "en": "General",
+        "de": "General"
     },
-    "login": {
-        "en": "Login",
-        "de": "Anmeldung"
+    "default-location": {
+        "en": "Default Location",
+        "de": "Standardposition"
     },
     "username": {
         "en": "Username:",

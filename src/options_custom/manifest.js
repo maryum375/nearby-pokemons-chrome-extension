@@ -1,19 +1,19 @@
 // SAMPLE
 this.manifest = {
-    "name": "My Extension",
+    "name": "Find Nearby Pokemon",
     "icon": "icon.png",
     "settings": [
         {
-            "tab": i18n.get("information"),
-            "group": i18n.get("login"),
+            "tab": i18n.get("general"),
+            "group": i18n.get("default-location"),
             "name": "username",
             "type": "text",
             "label": i18n.get("username"),
             "text": i18n.get("x-characters")
         },
         {
-            "tab": i18n.get("information"),
-            "group": i18n.get("login"),
+            "tab": i18n.get("general"),
+            "group": i18n.get("default-location"),
             "name": "password",
             "type": "text",
             "label": i18n.get("password"),
@@ -21,21 +21,21 @@ this.manifest = {
             "masked": true
         },
         {
-            "tab": i18n.get("information"),
-            "group": i18n.get("login"),
+            "tab": i18n.get("general"),
+            "group": i18n.get("default-location"),
             "name": "myDescription",
             "type": "description",
             "text": i18n.get("description")
         },
         {
-            "tab": i18n.get("information"),
+            "tab": i18n.get("general"),
             "group": i18n.get("logout"),
             "name": "myCheckbox",
             "type": "checkbox",
             "label": i18n.get("enable")
         },
         {
-            "tab": i18n.get("information"),
+            "tab": i18n.get("general"),
             "group": i18n.get("logout"),
             "name": "myButton",
             "type": "button",
